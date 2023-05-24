@@ -1,0 +1,1 @@
+SELECT * FROM quanly_nganhang.transfer_history_view;
