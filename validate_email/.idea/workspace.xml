@@ -9,42 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="431604f2-3a75-40b8-b2da-c016493fe1f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/.idea/artifacts/banking_transaction_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/.idea/artifacts/banking_transaction_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/src/main/java/com/example/banking_transaction/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../banking_transaction/src/main/java/com/example/banking_transaction/model/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.idea/artifacts/dictionary_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.idea/artifacts/dictionary_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/src/main/java/com/example/dictionary/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dictionary/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/validate_email_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/validate_email_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/configs/spring-config-mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../currency-convert/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../currency-convert/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="431604f2-3a75-40b8-b2da-c016493fe1f9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +152,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685000481944</updated>
-      <workItem from="1685000484335" duration="1862000" />
+      <workItem from="1685000484335" duration="2611000" />
     </task>
     <servers />
   </component>
