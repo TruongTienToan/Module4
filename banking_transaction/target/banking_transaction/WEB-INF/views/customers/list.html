@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>List of customers</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/WEB-INF/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/fontawesome/v5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
 </head>
 <body>
 <div class="container">
@@ -78,13 +76,13 @@
               </button>
             </a>
           </td>
-<!--          <td>-->
-<!--            <a th:href="@{/customers/transfer/__${item.id}__}">-->
-<!--              <button class="btn btn-outline-primary" title="Transfer">-->
-<!--                <i class="fas fa-exchange-alt"></i>Transfer-->
-<!--              </button>-->
-<!--            </a>-->
-<!--          </td>-->
+          <td>
+            <a th:href="@{/customers/transfer/__${item.id}__}">
+              <button class="btn btn-outline-primary" title="Transfer">
+                <i class="fas fa-exchange-alt"></i>Transfer
+              </button>
+            </a>
+          </td>
           <td>
             <a th:href="@{/customers/delete/__${item.id}__}">
               <button class="btn btn-outline-primary" title="Delete">
@@ -106,6 +104,10 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+
+  setTimeout(function () {
+      $('footer').slideUp('slow');
+  }, 1500);
 </script>
 
 </body>

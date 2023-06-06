@@ -10,12 +10,12 @@
     <th:block th:replace="/ep/layout/head :: head"/>
 </head>
 <body class="   footer-offset">
-<!--<th:block th:replace="/ep/layout/builder :: builder"/>-->
-<!--<th:block th:replace="/ep/layout/headerMain :: headerMain"/>-->
-<!--<th:block th:replace="/ep/layout/plugin :: plugin"/>-->
-<!--<th:block th:replace="/ep/layout/asidebar :: asidebar"/>-->
-<!--<th:block th:replace="/ep/layout/searchForm :: search"/>-->
-<!--<th:block th:replace="/ep/layout/asidebarCompact :: sidebarCompact"/>-->
+<th:block th:replace="/ep/layout/builder :: builder"/>
+<th:block th:replace="/ep/layout/headerMain :: headerMain"/>
+<th:block th:replace="/ep/layout/plugin :: plugin"/>
+<th:block th:replace="/ep/layout/asidebar :: asidebar"/>
+<th:block th:replace="/ep/layout/searchForm :: search"/>
+<th:block th:replace="/ep/layout/asidebarCompact :: sidebarCompact"/>
 <main id="content" role="main" class="main">
     <!-- Content -->
 
@@ -24,7 +24,7 @@
 
                 <div class="col-lg-8">
                     <!-- Step -->
-                    <form th:object="${student}" method="post">
+                    <form th:object="${employ}" method="post">
                     <!-- End Step -->
 
                     <!-- Content Step Form -->
@@ -34,9 +34,41 @@
                             <!-- Body -->
                             <div class="card-body">
                                 <!-- Form Group -->
-                                    <h1>Create new student</h1>
-                                <!-- End Form Group -->
+                                <div class="row form-group">
+                                    <label class="col-sm-3 col-form-label input-label">Avatar</label>
 
+                                    <div class="col-sm-9">
+                                        <div class="d-flex align-items-center">
+                                            <!-- Avatar -->
+                                            <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5"
+                                                   for="avatarUploader">
+                                                <img id="avatarImg" class="avatar-img" src="/assets/img/160x160/img1.jpg"
+                                                     alt="Image Description">
+
+                                                <input type="file" class="js-file-attach avatar-uploader-input"
+                                                       id="avatarUploader" data-hs-file-attach-options="{
+                                      &quot;textTarget&quot;: &quot;#avatarImg&quot;,
+                                      &quot;mode&quot;: &quot;image&quot;,
+                                      &quot;targetAttr&quot;: &quot;src&quot;,
+                                      &quot;resetTarget&quot;: &quot;.js-file-attach-reset-img&quot;,
+                                      &quot;resetImg&quot;: &quot;.//assets/img/160x160/img1.jpg&quot;,
+                                      &quot;allowTypes&quot;: [&quot;.png&quot;, &quot;.jpeg&quot;, &quot;.jpg&quot;]
+                                   }">
+
+                                                <span class="avatar-uploader-trigger">
+                              <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
+                            </span>
+                                            </label>
+                                            <!-- End Avatar -->
+
+                                            <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Form Group -->
+                                <div th:if="${error == true}">
+                                    <p th:each="err : ${#fields.errors('employ.*')}" th:text="${err}"></p>
+                                </div>
                                 <!-- Form Group -->
                                 <div class="row form-group">
                                     <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Full name <i
@@ -70,8 +102,8 @@
                             &quot;template&quot;: &quot;#addPhoneFieldTemplate&quot;,
                             &quot;container&quot;: &quot;#addPhoneFieldContainer&quot;,
                             &quot;defaultCreated&quot;: 0
-                          }" th:object="${student}">
-                                    <label for="phoneLabel" class="col-sm-3 col-form-label input-label">Phone<span
+                          }" th:object="${employ}">
+                                    <label for="phoneLabel" class="col-sm-3 col-form-label input-label">Phone <span
                                             class="input-label-secondary">(Optional)</span></label>
 
                                     <div class="col-sm-9">
@@ -92,27 +124,25 @@
 
                                     <!-- Container For Input Field -->
                                     <div id="addPhoneFieldContainer"></div>
+
+                                    <!--                                <a class="js-create-field form-link btn btn-sm btn-no-focus btn-ghost-primary" href="javascript:;">-->
+                                    <!--                                    <i class="tio-add"></i> Add phone-->
+                                    <!--                                </a>-->
                                 </div>
                                 <div class="row form-group">
                                     <label for="departmentLabel" class="col-sm-3 col-form-label input-label">Address</label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="address" id="departmentLabel"
+                                        <input type="text" class="form-control" name="department" id="departmentLabel"
                                                placeholder="Address" aria-label="Human resources" th:field="*{address}">
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <label for="organizationLabel" class="col-sm-3 col-form-label input-label">Classroom</label>
-                                    <div class="col-sm-9">
-                                        <select th:field="*{classroom}" id="organizationLabel" class="form-control">
-                                            <option value="JAVA" selected>Java</option>
-                                            <option value="REACT">React</option>
-                                            <option value="C++">C++</option>
-                                            <option value="NODEJS">Node.js</option>
-                                        </select>
+                                    <label for="organizationLabel" class="col-sm-3 col-form-label input-label">Position</label>
 
-<!--                                        <input type="text" class="form-control" name="organization" id="organizationLabel"-->
-<!--                                               placeholder="ext: Director " aria-label="Htmlstream" th:field="*{classroom}">-->
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="organization" id="organizationLabel"
+                                               placeholder="ext: Director " aria-label="Htmlstream" th:field="*{position}">
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -120,17 +150,26 @@
                                 <!-- Form Group -->
 
                                 <div class="row form-group">
-                                    <label for="departmentLabel" class="col-sm-3 col-form-label input-label">Date of Birth</label>
+                                    <label for="departmentLabel" class="col-sm-3 col-form-label input-label">Description</label>
 
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="department"
-                                               placeholder="Date of birth" aria-label="Human resources"
-                                               th:field="*{date}">
+                                               placeholder="Position description" aria-label="Human resources"
+                                               th:field="*{description}">
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
 
                                 <!-- Form Group -->
+                                <div class="row form-group">
+                                    <label class="col-sm-3 col-form-label input-label">Role</label>
+
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="department"
+                                               placeholder="Position description" aria-label="Human resources"
+                                               th:field="*{role}">
+                                    </div>
+                                </div>
                                 <div class="card-footer d-flex justify-content-end align-items-center">
                                     <button type="submit" class="btn btn-primary">
                                         Submit

@@ -18,65 +18,105 @@
 <th:block th:replace="/ep/layout/asidebarCompact :: sidebarCompact"/>
 <main id="content" role="main" class="main">
     <!-- Content -->
-    <div class="container-fluid">
-        <div class="header">
-            <nav class="navbar bg-primary">
-                <div class="container-fluid">
-                    <!--                    <h2>List of customers</h2>-->
-                    <div class="d-flex">
-                        <button id="btnShowCreateModal" class="btn btn-light" style="margin: 2px">
+    <div class="header">
+        <nav class="navbar bg-primary">
+            <div class="container-fluid">
+                <h2>List of customers</h2>
+                <div class="d-flex">
+                    <a href="/customers/create">
+                        <button class="btn btn-light m-4">
                             <i class="fas fa-plus"></i>
                             Create
                         </button>
-                    </div>
+                    </a>
+                    <a href="/customers/history">
+                        <button class="btn btn-light m-4">
+                            History
+                        </button>
+                    </a>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
+    </div>
 
-        <div class="content">
-            <table id="tbStudent" class="table table-hover">
-                <thead>
+    <div class="">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Balance</th>
+                <th>Address</th>
+                <th colspan="5">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="item : ${customers}">
                 <tr>
-                    <th></th>
-                    <th>#</th>
-                    <th>Full name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Date of Birth</th>
-                    <th>Address</th>
-                    <th>Classroom</th>
-                    <th>Action</th>
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.fullName}"></td>
+                    <td th:text="${item.email}"></td>
+                    <td th:text="${item.phone}"></td>
+                    <td th:text="${item.balance}"></td>
+                    <td th:text="${item.address}"></td>
+                    <td>
+                        <a th:href="@{/customers/update/__${item.id}__}">
+                            <button class="btn btn-outline-secondary" title="Edit">
+                                <i class="far fa-edit"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
 
+                        </button>
+                        <a th:href="@{/customers/deposit/__${item.id}__}">
+                            <button class="btn btn-outline-success" title="Deposit">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+
+                        </button>
+                        <a th:href="@{/customers/withdraw/__${item.id}__}">
+                            <button class="btn btn-outline-success" title="Withdraw">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/customers/transfer/__${item.id}__}">
+                            <button class="btn btn-outline-primary" title="Transfer">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/customers/delete/__${item.id}__}">
+                            <button class="btn btn-outline-primary" title="Delete">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </a>
+                    </td>
                 </tr>
-                </thead>
-                <tbody>
-
-                <tr th:each="student : ${students}">
-
-                            <td th:text="${student.studentId}></td>
-                            <td th:text=" ${student.fullName}></td>
-                            <td th:text="${student.email}></td>
-                            <td th:text=" ${student.phone}></td>
-                            <td th:text="${student.date}></td>
-                            <td th:text=" ${student.address}></td>
-                            <td th:text="${student.classroom}></td>
-                            <td>
-                            <div >
-                                <a class="btn btn-sm btn-white" th:href="@{/edit/__${student.id}__}">
-                                <i class="tio-edit"></i> Edit
-                                </a>
-                            </div>
-                            <div id="deleteUserPopover">
-                             <a class="btn btn-sm btn-white" th:href="@{/delete/__${student.id}__}"><i class="tio-edit"></i> Delete</a>
-                            </div>
-                            </td>
-                </tr>
-
-
-        </tbody>
+            </th:block>
+            </tbody>
         </table>
     </div>
+
+    <div class="footer">
+
     </div>
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
 
     <!-- End Content -->
     <th:block th:replace="/ep/layout/footer :: footer"/>

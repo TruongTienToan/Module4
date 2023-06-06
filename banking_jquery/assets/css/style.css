@@ -1,0 +1,17 @@
+.bg-body-navbar {
+    background-color: #075cab;
+}
+
+h1.navbar-brand {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+#tblCustomer thead tr th {
+    background-color: #f5ac00;
+    color: #fff;
+}
+
+h1 {
+    color: white;
+}
